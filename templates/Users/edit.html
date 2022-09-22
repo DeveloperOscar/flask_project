@@ -1,0 +1,17 @@
+{% extends 'layout/layout.html' %}
+{% block title %}Editar Usuario{% endblock %}
+
+{% block content %}
+<h1>Editar Usuario</h1>
+<form method="post" action="{{url_for('users.update',id = id)}}">
+  {{ form.hidden_tag() }}
+  {{ form.name.label(class="form-label") }}
+  {{ form.name(class="form-control") }}
+  <br />
+  {{ form.email.label(class="form-label") }}
+  {{ form.email(class="form-control") }}
+  <br />
+  <input type="submit" class="btn btn-primary mt-2" value="Enviar">
+
+</form>
+{% endblock %}
